@@ -53,6 +53,52 @@
                 <h3>生平介紹</h3>
                 <textarea id="life-story" rows="8" placeholder="在此分享往生者的生平..."></textarea>
             </section>
+
+            <section class="submit-form">
+                <h3>訃聞提交表單</h3>
+                <form id="obituary-form">
+                    <label for="deceased-name">逝者姓名:</label>
+                    <input type="text" id="deceased-name" name="deceasedName" required>
+                    
+                    <label for="birth-date">出生日期:</label>
+                    <input type="date" id="birth-date" name="birthDate" required>
+                    
+                    <label for="death-date">逝世日期:</label>
+                    <input type="date" id="death-date" name="deathDate" required>
+                    
+                    <label for="funeral-date">出殯日期:</label>
+                    <input type="date" id="funeral-date" name="funeralDate" required>
+                    
+                    <label for="funeral-location">出殯地點:</label>
+                    <input type="text" id="funeral-location" name="funeralLocation" required>
+                    
+                    <label for="hall">禮廳:</label>
+                    <input type="text" id="hall" name="hall">
+                    
+                    <label for="text-style">文字風格:</label>
+                    <select id="text-style" name="textStyle">
+                        <option value="traditional">傳統</option>
+                        <option value="modern">現代</option>
+                    </select>
+                    
+                    <label for="send-flower-basket">送花籃:</label>
+                    <input type="checkbox" id="send-flower-basket" name="sendFlowerBasket" value="yes">
+                    
+                    <label for="gender">性別:</label>
+                    <input type="radio" id="male" name="gender" value="male">
+                    <label for="male">男性</label>
+                    <input type="radio" id="female" name="gender" value="female">
+                    <label for="female">女性</label>
+                    
+                    <label for="music-choice">音樂選擇:</label>
+                    <select id="music-choice" name="musicChoice">
+                        <option value="music1">音樂1</option>
+                        <option value="music2">音樂2</option>
+                    </select>
+                    
+                    <button type="submit">提交訃聞</button>
+                </form>
+            </section>
         </div>
     </main>
 
