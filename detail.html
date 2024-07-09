@@ -1,69 +1,74 @@
-<!DOCTYPE html>
-<html lang="zh-Hant-TW">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>祥安生命禮儀公司 - 訃聞詳情</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
-    <header class="header">
-        <div class="logo">
-            <img src="path/to/your/logo.png" alt="公司Logo">
-        </div>
-        <nav class="navbar">
-            <ul>
-                <li><a href="index.html">首頁</a></li>
-                <li><a href="#">訃聞提交</a></li>
-                <li><a href="#">服務項目</a></li>
-                <li><a href="#">關於我們</a></li>
-                <li><a href="#">聯絡我們</a></li>
-            </ul>
-        </nav>
-    </header>
+document.addEventListener('DOMContentLoaded', function() {
+    const urlParams = new URLSearchParams(window.location.search);
+    const deceasedName = urlParams.get('deceasedName');
+    const birthDate = urlParams.get('birthDate');
+    const deathDate = urlParams.get('deathDate');
+    const funeralDate = urlParams.get('funeralDate');
+    const funeralLocation = urlParams.get('funeralLocation');
+    const hall = urlParams.get('hall');
+    const sendFlowerBasket = urlParams.get('sendFlowerBasket');
+    const gender = urlParams.get('gender');
+    const musicChoice = urlParams.get('musicChoice');
 
-    <main class="main-content">
-        <div class="container">
-            <section class="obituary-details">
-                <h2>訃聞詳情</h2>
-                <div id="obituary-content">
-                    <!-- 这里将通过JavaScript动态生成 -->
-                </div>
-            </section>
+    const age = calculateAge(birthDate, deathDate);
+    const ageTerm = getAgeTerm(age);
 
-            <section class="memorial-message">
-                <h3>追思留言</h3>
-                <div id="messages-container">
-                    <!-- 这里将通过JavaScript动态生成留言 -->
-                </div>
-                <textarea id="message-input" rows="4" placeholder="在此留下您的追思留言..."></textarea>
-                <button onclick="addMessage()">提交留言</button>
-            </section>
+    let obituaryText = '';
 
-            <section class="photo-memories">
-                <h3>照片回憶</h3>
-                <input type="file" id="photo-upload" accept="image/*">
-                <button onclick="uploadPhoto()">上傳照片</button>
-                <div id="photo-gallery">
-                    <!-- 这里将通过JavaScript动态展示照片 -->
-                </div>
-            </section>
+    if (textStyle === 'traditional') {
+        obituaryText = `
+            <p>我們摯愛的${gender === 'male' ? '先生' : '女士'}${deceasedName}於${deathDate}逝世，${ageTerm}${age}歲</p>
+            <p>出殯日期: ${funeralDate}</p>
+            <p>出殯地點: ${funeralLocation}</p>
+            <p>禮廳: ${hall}</p>
+        `;
+    } else {
+        obituaryText = `
+            <h2>${deceasedName}</h2>
+            <p>${deathDate}逝世，${ageTerm}${age}歲</p>
+            <p>出殯日期: ${funeralDate}</p>
+            <p>出殯地點: ${funeralLocation}</p>
+            <p>禮廳: ${hall}</p>
+        `;
+    }
 
-            <section class="life-story">
-                <h3>生平介紹</h3>
-                <textarea id="life-story" rows="8" placeholder="在此分享往生者的生平..."></textarea>
-            </section>
-        </div>
-    </main>
+    document.getElementById('obituary-content').innerHTML = obituaryText;
 
-    <footer class="footer">
-        <div class="contact-info">
-            <p>24小時聯絡電話 ☎️ 0938-179-858</p>
-            <p>Line ID: your_line_id</p>
-        </div>
-        <p>2024 祥安生命有限公司 版權所有</p>
-    </footer>
+    if (sendFlowerBasket === 'yes') {
+        document.getElementById('flower-basket-section').innerHTML = `
+            <h2>花籃</h2>
+            <p>由公司統一製作花籃，給予無限祝福。</p>
+        `;
+    }
 
-    <script src="script.js"></script>
-</body>
-</html>
+    const music = new Audio(`path/to/${musicChoice}.mp3`);
+    music.loop = true;
+    music.play();
+
+    const messagesContainer = document.getElementById('messages-container');
+    const messageInput = document.getElementById('message-input');
+
+    window.addMessage = function() {
+        const message = messageInput.value;
+        if (message.trim() !== '') {
+            const messageElement = document.createElement('div');
+            messageElement.textContent = message;
+            messagesContainer.appendChild(messageElement);
+            messageInput.value = '';
+        }
+    };
+
+    function calculateAge(birthDate, deathDate) {
+        const birth = new Date(birthDate);
+        const death = new Date(deathDate);
+        return death.getFullYear() - birth.getFullYear();
+    }
+
+    function getAgeTerm(age) {
+        if (age < 30) return '得年';
+        if (age < 60) return '享年';
+        if (age < 90) return '享壽';
+        if (age < 100) return '享耆壽';
+        return '享嵩壽';
+    }
+});
