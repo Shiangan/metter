@@ -1,60 +1,88 @@
 /* 全局样式 */
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    background-color: #f9f9f9;
+    color: #333;
     margin: 0;
     padding: 0;
-    background-color: #f0f0f0;
+}
+
+.container {
+    width: 80%;
+    margin: 0 auto;
+    padding: 20px;
 }
 
 .header {
-    background-color: #333;
-    color: #fff;
+    background-color: #fff;
     padding: 10px 0;
-    text-align: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-.header .logo img {
-    width: 100px; /* 调整公司 Logo 大小 */
-}
-
-.navbar {
-    text-align: center;
-    margin-top: 10px;
+.logo img {
+    height: 50px;
+    width: auto;
 }
 
 .navbar ul {
     list-style-type: none;
     padding: 0;
+    margin: 0;
 }
 
 .navbar ul li {
     display: inline;
-    margin-right: 10px;
+    margin-right: 20px;
 }
 
 .navbar ul li a {
     text-decoration: none;
+    color: #333;
+    font-weight: bold;
+}
+
+.navbar ul li a:hover {
+    color: #007bff;
+}
+
+.main-content {
+    padding: 20px 0;
+}
+
+.obituary-details, .memorial-message, .photo-memories, .life-story {
+    background-color: #fff;
+    margin-bottom: 20px;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.obituary-details h2, .memorial-message h3, .photo-memories h3, .life-story h3 {
+    color: #333;
+}
+
+textarea, input[type="file"] {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    resize: vertical;
+}
+
+button {
+    padding: 10px 20px;
+    background-color: #007bff;
     color: #fff;
-    padding: 5px 10px;
+    border: none;
+    cursor: pointer;
     border-radius: 4px;
     transition: background-color 0.3s;
 }
 
-.navbar ul li a:hover {
-    background-color: #555;
-}
-
-.main-content {
-    padding: 20px;
-}
-
-.container {
-    max-width: 800px;
-    margin: 0 auto;
-    background-color: #fff;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+button:hover {
+    background-color: #0056b3;
 }
 
 .footer {
@@ -62,152 +90,12 @@ body {
     color: #fff;
     text-align: center;
     padding: 10px 0;
-    position: absolute;
-    bottom: 0;
-    width: 100%;
-}
-
-.footer .contact-info {
-    margin-bottom: 10px;
 }
 
 .footer p {
     margin: 5px 0;
 }
 
-/* 表单样式 */
-form {
-    display: flex;
-    flex-direction: column;
-}
-
-form label {
+.contact-info {
     margin-bottom: 10px;
 }
-
-form input[type="text"],
-form input[type="date"],
-form select,
-form textarea {
-    padding: 10px;
-    margin-bottom: 10px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-}
-
-form button {
-    padding: 10px 20px;
-    background-color: #007bff;
-    color: #fff;
-    border: none;
-    cursor: pointer;
-    border-radius: 4px;
-    transition: background-color 0.3s;
-}
-
-form button:hover {
-    background-color: #0056b3;
-}
-
-/* 详细信息样式 */
-.obituary-details {
-    margin-top: 20px;
-}
-
-.obituary-details h2 {
-    color: #333;
-    font-size: 24px;
-    margin-bottom: 10px;
-}
-
-.obituary-details p {
-    color: #666;
-}
-
-.flower-basket {
-    margin-top: 20px;
-}
-
-.flower-basket h2 {
-    color: #333;
-    font-size: 24px;
-    margin-bottom: 10px;
-}
-
-.memorial-board {
-    margin-top: 40px;
-    padding: 20px;
-    background-color: #f0f0f0;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
-
-.memorial-board h3 {
-    color: #333;
-    font-size: 20px;
-    margin-bottom: 10px;
-}
-
-.memorial-board form {
-    display: flex;
-    flex-direction: column;
-}
-
-.memorial-board label {
-    margin-bottom: 10px;
-}
-
-.memorial-board textarea {
-    height: 100px;
-}
-
-.memorial-board button {
-    margin-top: 10px;
-    padding: 10px 20px;
-    background-color: #007bff;
-    color: #fff;
-    border: none;
-    cursor: pointer;
-    border-radius: 4px;
-    transition: background-color 0.3s;
-}
-
-.memorial-board button:hover {
-    background-color: #0056b3;
-}
-
-.photo-memories {
-    margin-top: 20px;
-}
-
-.photo-memories h3 {
-    color: #333;
-    font-size: 24px;
-    margin-bottom: 10px;
-}
-
-.life-story {
-    margin-top: 20px;
-}
-
-.life-story h3 {
-    color: #333;
-    font-size: 24px;
-    margin-bottom: 10px;
-}
-
-.life-story textarea {
-    height: 200px;
-}
-
-.ceremony-map {
-    margin-top: 20px;
-}
-
-.ceremony-map h3 {
-    color: #333;
-    font-size: 24px;
-    margin-bottom: 10px;
-}
-
-/* 其他样式可以根据需要添加和调整 */
