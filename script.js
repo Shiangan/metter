@@ -6,7 +6,6 @@ document.addEventListener('DOMContentLoaded', function() {
     const funeralDate = urlParams.get('funeralDate');
     const funeralLocation = urlParams.get('funeralLocation');
     const hall = urlParams.get('hall');
-    const textStyle = urlParams.get('textStyle');
     const sendFlowerBasket = urlParams.get('sendFlowerBasket');
     const gender = urlParams.get('gender');
     const musicChoice = urlParams.get('musicChoice');
