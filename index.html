@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>祥安生命有限公司</title>
+    <title>祥安生命禮儀公司 - 訃聞</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -24,27 +24,42 @@
 
     <main class="main-content">
         <div class="container">
-            <div id="obituary-details">
-                <!-- 訃聞詳細信息內容 -->
-                <h2>訃聞詳細信息</h2>
-                <p>在這裡放置往生者的基本資訊和訃聞內容。</p>
-            </div>
-
-            <!-- 展開內容 -->
-            <div class="expand-section">
-                <button class="expand-btn" onclick="toggleExpand()">展開更多資訊</button>
-                <div class="expand-content" id="expandContent">
-                    <!-- 展開後的詳細內容 -->
-                    <h3>更多資訊</h3>
-                    <p>在這裡放置更多需要展開的詳細內容，例如追思留言、照片懷念、生平介紹等。</p>
+            <section class="obituary-details">
+                <h2>訃聞詳情</h2>
+                <div id="obituary-content">
+                    <!-- 这里将通过JavaScript动态生成 -->
                 </div>
-            </div>
+            </section>
+
+            <section class="memorial-message">
+                <h3>追思留言</h3>
+                <div id="messages-container">
+                    <!-- 这里将通过JavaScript动态生成留言 -->
+                </div>
+                <textarea id="message-input" rows="4" placeholder="在此留下您的追思留言..."></textarea>
+                <button onclick="addMessage()">提交留言</button>
+            </section>
+
+            <section class="photo-memories">
+                <h3>照片回憶</h3>
+                <input type="file" id="photo-upload" accept="image/*">
+                <button onclick="uploadPhoto()">上傳照片</button>
+                <div id="photo-gallery">
+                    <!-- 这里将通过JavaScript动态展示照片 -->
+                </div>
+            </section>
+
+            <section class="life-story">
+                <h3>生平介紹</h3>
+                <textarea id="life-story" rows="8" placeholder="在此分享往生者的生平..."></textarea>
+            </section>
         </div>
     </main>
 
     <footer class="footer">
         <div class="contact-info">
             <p>24小時聯絡電話 ☎️ 0938-179-858</p>
+            <p>Line ID: your_line_id</p>
         </div>
         <p>2024 祥安生命有限公司 版權所有</p>
     </footer>
