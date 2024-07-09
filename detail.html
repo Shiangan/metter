@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>訃聞詳情</title>
-    <link rel="stylesheet" href="details-style.css">
+    <title>祥安生命禮儀公司 - 訃聞詳情</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <header class="header">
@@ -13,7 +13,7 @@
         </div>
         <nav class="navbar">
             <ul>
-                <li><a href="#">首頁</a></li>
+                <li><a href="index.html">首頁</a></li>
                 <li><a href="#">訃聞提交</a></li>
                 <li><a href="#">服務項目</a></li>
                 <li><a href="#">關於我們</a></li>
@@ -27,38 +27,31 @@
             <section class="obituary-details">
                 <h2>訃聞詳情</h2>
                 <div id="obituary-content">
-                    <!-- JavaScript 将在此处动态生成内容 -->
+                    <!-- 这里将通过JavaScript动态生成 -->
                 </div>
             </section>
 
-            <section class="flower-basket" id="flower-basket-section">
-                <!-- JavaScript 将在此处动态生成内容 -->
-            </section>
-
-            <section class="memorial-board">
-                <h3>留言追思</h3>
+            <section class="memorial-message">
+                <h3>追思留言</h3>
                 <div id="messages-container">
-                    <!-- JavaScript 将在此处动态生成内容 -->
+                    <!-- 这里将通过JavaScript动态生成留言 -->
                 </div>
-                <textarea id="message-input" rows="4" cols="50" placeholder="在這裡留下您的追思留言..."></textarea>
-                <button onclick="addMessage()">留言</button>
+                <textarea id="message-input" rows="4" placeholder="在此留下您的追思留言..."></textarea>
+                <button onclick="addMessage()">提交留言</button>
             </section>
 
             <section class="photo-memories">
-                <h3>照片懷念</h3>
+                <h3>照片回憶</h3>
                 <input type="file" id="photo-upload" accept="image/*">
+                <button onclick="uploadPhoto()">上傳照片</button>
+                <div id="photo-gallery">
+                    <!-- 这里将通过JavaScript动态展示照片 -->
+                </div>
             </section>
 
             <section class="life-story">
                 <h3>生平介紹</h3>
-                <textarea id="life-story" rows="8" cols="50" placeholder="在這裡分享往生者的生平..."></textarea>
-            </section>
-
-            <section class="ceremony-map">
-                <h3>儀式地圖</h3>
-                <div id="ceremony-map">
-                    <!-- JavaScript 将在此处动态生成内容 -->
-                </div>
+                <textarea id="life-story" rows="8" placeholder="在此分享往生者的生平..."></textarea>
             </section>
         </div>
     </main>
@@ -66,10 +59,11 @@
     <footer class="footer">
         <div class="contact-info">
             <p>24小時聯絡電話 ☎️ 0938-179-858</p>
+            <p>Line ID: your_line_id</p>
         </div>
         <p>2024 祥安生命有限公司 版權所有</p>
     </footer>
 
-    <script src="details-script.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
