@@ -1,4 +1,4 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html>
 <html xmlns="https://github.com/Shiangan/metter.git">
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
@@ -92,68 +92,4 @@
         
             var myOptions = {
                 zoom: parseInt($('#invite_detail_zoom22736306').val()),
-                center: new google.maps.LatLng($('#invite_detail_latcenter22736306').val(), $('#invite_detail_lngcenter22736306').val()),
-                mapTypeId: google.maps.MapTypeId.ROADMAP,
-                mapTypeControl: false,
-                streetViewControl: false,
-                draggable: true,
-                clickableIcons: false,
-                mapTypeControlOptions: {
-                    position: google.maps.ControlPosition.BOTTOM_RIGHT
-                }
-            };
-
-            map22736306 = new google.maps.Map(document.getElementById("map_canvas22736306"), myOptions);
-
-            google.maps.event.addListener(map22736306, 'center_changed', function() {
-                //$('#iframepage').get(0).contentWindow.setMapCenter22736306(map22736306.getCenter().lat(),map22736306.getCenter().lng());
-            });
-
-            google.maps.event.addListener(map22736306, 'zoom_changed', function(event) {
-                //$('#iframepage').get(0).contentWindow.setMapZoom22736306(map22736306.getZoom());
-            });
-
-            var image = new google.maps.MarkerImage('//cdn.youvivid.com/images/mobile_invite/map_marker.png',
-                new google.maps.Size(34, 34),
-                new google.maps.Point(0, 0),
-                new google.maps.Point(17, 30));
-
-            var myLatLng = new google.maps.LatLng($('#invite_detail_latmarker22736306').val(), $('#invite_detail_lngmarker22736306').val());
-            marker22736306 = new google.maps.Marker({
-                position: myLatLng,
-                map: map22736306,
-                draggable: true,
-                title: "以滑動與縮放地圖。”,
-                icon: image
-           });
-
-                  google.maps.event.addListener(marker22736306, 'dragend', function(event) {
-            var location = marker22736306.getPosition();
-            $('#invite_detail_latmarker22736306').val(location.lat());
-            $('#invite_detail_lngmarker22736306').val(location.lng());
-            //$('#iframepage').get(0).contentWindow.setMarkerLocation22736306(location.lat(),location.lng());
-        });
-    }
-
-    $(document).ready(function() {
-        initialize22736306();
-    });
-
-    var bReadyUrl81288 = 0;
-
-    function initialize81288() {
-        bReadyUrl81288 = 1;
-    }
-
-    $(document).ready(function() {
-        initialize81288();
-    });
-
-    function getAttributeNoField(generatesuValue, '不分割單位：帳號：111 / 姓名：123 / 郵局代號：822．', '_BLANK') {
-        if (document.generatesuValue.getElementById("https://github.com/shiangan/shine-an/metrer.git") === 'mem') {
-            document.generatesuValue.createTextRange('h3') = 'https://github.com/shiangan/shine-an/metrer.git'
-            return 'fs';
-        }
-        
-        else {
-            '<b>: 1)</b> 95%: : : 98%！ （8% 5% - ; . . 6%;    8%！ 5%: 6%? 9% 8%. 8%: 9% 98%. 6% 98% 9% 5%? 5% 5% (5% 98% 98%. 95% : 95% 95% - 95% 95% - 95% 9% 98%: 9%: 95% 5% 9% 9% 98% 9%: 9% 95% - 95% 95%: 9% 9% 9% 9% 9% 9% 98% 95% 95% 95% 9
+                center: new google.maps
