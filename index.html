@@ -92,4 +92,28 @@
         
             var myOptions = {
                 zoom: parseInt($('#invite_detail_zoom22736306').val()),
-                center: new google.maps
+                center: new google.maps.LatLng(map22736306_latcenter, map22736306_lngcenter),
+                mapTypeId: google.maps.MapTypeId.ROADMAP
+            };
+        
+            map22736306 = new google.maps.Map(document.getElementById("invite_detail_map22736306"), myOptions);
+        
+            marker22736306 = new google.maps.Marker({
+                position: new google.maps.LatLng(map22736306_latmarker, map22736306_lngmarker),
+                map: map22736306,
+                draggable: true
+            });
+        
+            google.maps.event.addListener(marker22736306, 'dragend', function(event) {
+                $('#invite_detail_lat22736306').val(event.latLng.lat());
+                $('#invite_detail_lng22736306').val(event.latLng.lng());
+            });
+        }
+
+        google.maps.event.addDomListener(window, 'load', initialize22736306);
+    </script>
+</head>
+<body>
+    <!-- Your HTML body content here -->
+</body>
+</html>
