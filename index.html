@@ -1,69 +1,159 @@
-<!DOCTYPE html>
-<html lang="zh-Hant-TW">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="https://github.com/shiangan/shine-an/metrer.git">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>祥安生命禮儀公司 - 訃聞</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
-    <header class="header">
-        <div class="logo">
-            <img src="path/to/your/logo.png" alt="公司Logo">
-        </div>
-        <nav class="navbar">
-            <ul>
-                <li><a href="#">首頁</a></li>
-                <li><a href="#">訃聞提交</a></li>
-                <li><a href="#">服務項目</a></li>
-                <li><a href="#">關於我們</a></li>
-                <li><a href="#">聯絡我們</a></li>
-            </ul>
-        </nav>
-    </header>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>訃聞訃告 電子訃文 網上製作平台</title>
+    <meta name="description" content="提供佛教基督教等訃聞範本,線上編輯製作電子訃聞告別式追思會邀請函，透過Line, Facebook, Whatsapp 發送手機訃聞。可彈性加入生平介紹、相簿影片、地圖導航、賓客統計、祝福留言、及簡訊提醒等功能">
+    <meta property="og:title" content="電子訃告 電子訃聞 雲端製作平台">
+    <meta property="og:description" content="提供佛教基督教等訃聞範本,網上編輯製作電子訃聞告別式追思會邀請函，透過Line, Facebook, Whatsapp 發送手機訃聞。可彈性加入生平介紹、相簿影片、地圖導航、賓客統計、祝福留言、及簡訊提醒等功能">
+    <meta name="keywords" content="訃聞,訃告,訃文,白帖,告別式邀請函,電子訃聞,雲端訃聞,手機訃聞">
+    <meta property="og:site_name" content="YouVivid.net">
+    <meta property="og:image" content="https://ob.youvivid.net/images_funssage/youvivid_obituary_invitation.jpg">
+    <meta property="og:url" content="https://ob.youvivid.net">
+    <meta property="og:type" content="website">
+    <meta property="fb:app_id" content="113568098684585">
+    <meta property="fb:admins" content="632874169">
+    
+    <link rel="icon" href="images_icon/favicon_ob.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="images_icon/favicon_ob.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="images_icon/favicon_ob.ico" type="image/vnd.microsoft.icon">
+    <link rel="apple-touch-icon" sizes="192x192" href="images_icon/icon_ob_192x192.png">
+    <link rel="apple-touch-icon-precomposed" sizes="192x192" href="images_icon/icon_ob_192x192.png">
 
-    <main class="main-content">
-        <div class="container">
-            <section class="obituary-details">
-                <h2>訃聞詳情</h2>
-                <div id="obituary-content">
-                    <!-- 这里将通过JavaScript动态生成 -->
-                </div>
-            </section>
+    <link rel="canonical" href="https://ob.youvivid.net/mobile_invitation">
+    <link rel="alternate" media="only screen and (max-width: 640px)" href="https://ob.youvivid.net/index_mobile_invitation.asp">
+    
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="//cdn.youvivid.com/css/jquery-ui-1.8.18.custom.full.css" type="text/css" media="screen" charset="utf-8">
+    <link rel="stylesheet" href="//cdn.youvivid.com/css/style.css">
+    <link rel="stylesheet" href="//cdn.youvivid.com/js/jquery.mobile-1.4.5.min.css">
+    <link rel="stylesheet" href="//cdn.youvivid.com/jqm-inlinetabs/jqm-inlinetabs.leo.css">
+    <link rel="stylesheet" href="//cdn.youvivid.com/code.photoswipe-3.0.5/3.0.5/examples/styles.css">
+    <link rel="stylesheet" href="//cdn.youvivid.com/code.photoswipe-3.0.5/3.0.5/photoswipe.css">
+    <link href="//cdn.youvivid.com/css/popbox.css" type="text/css" rel="stylesheet">
 
-            <section class="memorial-message">
-                <h3>追思留言</h3>
-                <div id="messages-container">
-                    <!-- 这里将通过JavaScript动态生成留言 -->
-                </div>
-                <textarea id="message-input" rows="4" placeholder="在此留下您的追思留言..."></textarea>
-                <button onclick="addMessage()">提交留言</button>
-            </section>
+    <!-- Scripts -->
+    <script src="//cdn.youvivid.com/js/jquery-latest.js"></script>
+    <script src="//cdn.youvivid.com/js/jquery-ui-1.8.18.full.min.js"></script>
+    <script src="//cdn.youvivid.com/js/jquery.mobile-1.4.5.min.js"></script>
+    <script src="//cdn.youvivid.com/jqm-inlinetabs/jqm-inlinetabs.min.js"></script>
+    <script src="//cdn.youvivid.com/js/jquery.ui.touch-punch.min.js"></script>
+    <script src="//cdn.youvivid.com/js/unslider.js"></script>
+    <script src="//maps.googleapis.com/maps/api/js?key=AIzaSyCF5MS1Oeo_dPBEQu9hyzZc5WnBPJaBwkE&libraries=places"></script>
+    <script src="//cdn.youvivid.com/code.photoswipe-3.0.5/3.0.5/lib/klass.min.js"></script>
+    <script src="//cdn.youvivid.com/js/date.format.js"></script>
+    <script src="ckeditor4.3.4_leo/ckeditor.js"></script>
 
-            <section class="photo-memories">
-                <h3>照片回憶</h3>
-                <input type="file" id="photo-upload" accept="image/*">
-                <button onclick="uploadPhoto()">上傳照片</button>
-                <div id="photo-gallery">
-                    <!-- 这里将通过JavaScript动态展示照片 -->
-                </div>
-            </section>
+    <script>
+        CKEDITOR.timestamp = '0930';
+        var bSecondBack = 0;
 
-            <section class="life-story">
-                <h3>生平介紹</h3>
-                <textarea id="life-story" rows="8" placeholder="在此分享往生者的生平..."></textarea>
-            </section>
-        </div>
-    </main>
+        function changeToPage(pageID) {
+            var iframeScrollTop = $('#iframepage').contents().scrollTop();
+            $(":mobile-pagecontainer").pagecontainer("change", pageID, { changeHash: true });
+            bSecondBack = 1;
+        }
 
-    <footer class="footer">
-        <div class="contact-info">
-            <p>24小時聯絡電話 ☎️ 0938-179-858</p>
-            <p>Line ID: your_line_id</p>
-        </div>
-        <p>2024 祥安生命有限公司 版權所有</p>
-    </footer>
+        function openPanel(panelID) {
+            $(panelID).panel("open");
+        }
 
-    <script src="script.js"></script>
-</body>
-</html>
+        var bshow87233662 = 1;
+        var bshow22736305 = 1;
+        var bshow22736306 = 1;
+
+        var geocoder22736306;
+        
+        function codeAddress22736306(address) {
+            geocoder22736306.geocode({ 'address': address }, function(results, status) {
+                if (status == google.maps.GeocoderStatus.OK) {
+                    map22736306.setCenter(results[0].geometry.location);
+                    marker22736306.setPosition(results[0].geometry.location);
+                    $('#invite_detail_bplace22736306').val(1);
+                    $('#invite_detail_placeid22736306').val(results[0].place_id);
+                } else {
+                    $('#invite_detail_bplace22736306').val(0);
+                    alert("定位失敗, 請修改地址後再試一次, 失敗原因: " + status);
+                }
+            });
+        }
+
+        var map22736306 = null;
+        var marker22736306;
+        var map22736306_latcenter = 25.013823007409776;
+        var map22736306_lngcenter = 121.55311019999999;
+        var map22736306_latmarker = 25.0137559;
+        var map22736306_lngmarker = 121.55303140000001;
+        var map22736306_zoom = 16;
+
+        function initialize22736306() {
+            geocoder22736306 = new google.maps.Geocoder();
+        
+            var myOptions = {
+                zoom: parseInt($('#invite_detail_zoom22736306').val()),
+                center: new google.maps.LatLng($('#invite_detail_latcenter22736306').val(), $('#invite_detail_lngcenter22736306').val()),
+                mapTypeId: google.maps.MapTypeId.ROADMAP,
+                mapTypeControl: false,
+                streetViewControl: false,
+                draggable: true,
+                clickableIcons: false,
+                mapTypeControlOptions: {
+                    position: google.maps.ControlPosition.BOTTOM_RIGHT
+                }
+            };
+
+            map22736306 = new google.maps.Map(document.getElementById("map_canvas22736306"), myOptions);
+
+            google.maps.event.addListener(map22736306, 'center_changed', function() {
+                //$('#iframepage').get(0).contentWindow.setMapCenter22736306(map22736306.getCenter().lat(),map22736306.getCenter().lng());
+            });
+
+            google.maps.event.addListener(map22736306, 'zoom_changed', function(event) {
+                //$('#iframepage').get(0).contentWindow.setMapZoom22736306(map22736306.getZoom());
+            });
+
+            var image = new google.maps.MarkerImage('//cdn.youvivid.com/images/mobile_invite/map_marker.png',
+                new google.maps.Size(34, 34),
+                new google.maps.Point(0, 0),
+                new google.maps.Point(17, 30));
+
+            var myLatLng = new google.maps.LatLng($('#invite_detail_latmarker22736306').val(), $('#invite_detail_lngmarker22736306').val());
+            marker22736306 = new google.maps.Marker({
+                position: myLatLng,
+                map: map22736306,
+                draggable: true,
+                title: "以滑動與縮放地圖。”,
+                icon: image
+           });
+
+                  google.maps.event.addListener(marker22736306, 'dragend', function(event) {
+            var location = marker22736306.getPosition();
+            $('#invite_detail_latmarker22736306').val(location.lat());
+            $('#invite_detail_lngmarker22736306').val(location.lng());
+            //$('#iframepage').get(0).contentWindow.setMarkerLocation22736306(location.lat(),location.lng());
+        });
+    }
+
+    $(document).ready(function() {
+        initialize22736306();
+    });
+
+    var bReadyUrl81288 = 0;
+
+    function initialize81288() {
+        bReadyUrl81288 = 1;
+    }
+
+    $(document).ready(function() {
+        initialize81288();
+    });
+
+    function getAttributeNoField(generatesuValue, '不分割單位：帳號：111 / 姓名：123 / 郵局代號：822．', '_BLANK') {
+        if (document.generatesuValue.getElementById("https://github.com/shiangan/shine-an/metrer.git") === 'mem') {
+            document.generatesuValue.createTextRange('h3') = 'https://github.com/shiangan/shine-an/metrer.git'
+            return 'fs';
+        }
+        
+        else {
+            '<b>: 1)</b> 95%: : : 98%！ （8% 5% - ; . . 6%;    8%！ 5%: 6%? 9% 8%. 8%: 9% 98%. 6% 98% 9% 5%? 5% 5% (5% 98% 98%. 95% : 95% 95% - 95% 95% - 95% 9% 98%: 9%: 95% 5% 9% 9% 98% 9%: 9% 95% - 95% 95%: 9% 9% 9% 9% 9% 9% 98% 95% 95% 95% 9
