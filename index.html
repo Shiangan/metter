@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!DOCTYPE>
 <html lang="zh-Hant">
 <head>
     <meta charset="utf-8">
@@ -6,92 +6,26 @@
     <title>訃聞訃告 電子訃文 網上製作平台</title>
     <meta name="description" content="提供佛教基督教等訃聞範本,線上編輯製作電子訃聞告別式追思會邀請函，透過Line, Facebook, Whatsapp 發送手機訃聞。可彈性加入生平介紹、相簿影片、地圖導航、賓客統計、祝福留言、及簡訊提醒等功能">
     <meta name="keywords" content="訃聞,訃告,訃文,白帖,告別式邀請函,電子訃聞,雲端訃聞,手機訃聞">
-    
+
     <!-- Open Graph Meta Tags -->
     <meta property="og:title" content="電子訃告 電子訃聞 雲端製作平台">
     <meta property="og:description" content="提供佛教基督教等訃聞範本,網上編輯製作電子訃聞告別式追思會邀請函，透過Line, Facebook, Whatsapp 發送手機訃聞。可彈性加入生平介紹、相簿影片、地圖導航、賓客統計、祝福留言、及簡訊提醒等功能">
-    <meta property="og:site_name" content="">
-    <meta property="og:image" content="">
-    <meta property="og:url" content="">
+    <meta property="og:site_name" content="live in our hearts">
+    <meta property="og:logo.png" content="logo.png">
+    <meta property="og:url" content="https://shiangan.github.io/metter/">
     <meta property="og:type" content="website">
-    <meta property="fb:app_id" content="">
-    <meta property="fb:admins" content="">
-    
-    <!-- Favicon -->
-    <link rel="icon" href="" type="image/x-icon">
-    <link rel="shortcut icon" href="images_icon/favicon_ob.ico" type="image/x-icon">
-    <link rel="apple-touch-icon" sizes="192x192" href=".png">
-    <link rel="apple-touch-icon-precomposed" sizes="192x192" href="i.png">
-    
-    <!-- Stylesheets -->
-    <link rel="stylesheet" href="https://cdn.youvivid.net/css/jquery-ui-1.8.18.custom.full.css" type="text/css" media="screen" charset="utf-8">
-    <link rel="stylesheet" href="">
-    <link rel="stylesheet" href="">
-    <link rel="stylesheet" href="">
-    <link rel="stylesheet" href=">
-    <link rel="stylesheet" href="">
-    <link href="" type="text/css" rel="stylesheet">
+ 
 
-   
-
-    <script>
-        CKEDITOR.timestamp = '0930';
-
-        function initialize22736306() {
-            var geocoder22736306 = new google.maps.Geocoder();
-            var myOptions = {
-                zoom: 16,
-                center: new google.maps.LatLng(25.013823007409776, 121.55311019999999),
-                mapTypeId: google.maps.MapTypeId.ROADMAP,
-                mapTypeControl: false,
-                streetViewControl: false,
-                draggable: true,
-                clickableIcons: false,
-                mapTypeControlOptions: {
-                    position: google.maps.ControlPosition.BOTTOM_RIGHT
-                }
-            };
-
-            var map22736306 = new google.maps.Map(document.getElementById("map_canvas22736306"), myOptions);
-
-            var marker22736306 = new google.maps.Marker({
-                position: new google.maps.LatLng(25.0137559, 121.55303140000001),
-                map: map22736306,
-                draggable: true,
-                title: "以滑動與縮放地圖。",
-                icon: new google.maps.MarkerImage('https://cdn.youvivid.net/images/mobile_invite/map_marker.png',
-                    new google.maps.Size(34, 34),
-                    new google.maps.Point(0, 0),
-                    new google.maps.Point(17, 30))
-            });
-
-            google.maps.event.addListener(marker22736306, 'dragend', function(event) {
-                var location = marker22736306.getPosition();
-                document.getElementById('invite_detail_latmarker22736306').value = location.lat();
-                document.getElementById('invite_detail_lngmarker22736306').value = location.lng();
-            });
-        }
-
-        $(document).ready(function() {
-            initialize22736306();
-        });
-    </script>
-</head>
-<body>
+    <body>
     <div data-role="page" id="invitation_page">
         <div data-role="header" data-position="fixed">
             <h1>訃聞訃告 電子訃文</h1>
         </div>
         <div data-role="content">
-            <div id="map_canvas22736306" style="height:300px;"></div>
-            <div data-role="fieldcontain">
-                <label for="invite_detail_bplace22736306">定位地址:</label>
-                <input type="text" id="invite_detail_bplace22736306">
-                <input type="hidden" id="invite_detail_placeid22736306">
-            </div>
+            <p>這是一個電子訃文示例頁面。你可以在這裡添加更多內容和設計。</p>
         </div>
         <div data-role="footer" data-position="fixed">
-            <h4>Footer text</h4>
+            <h4>2024</h4>
         </div>
     </div>
 </body>
