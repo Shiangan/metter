@@ -1,32 +1,42 @@
-<!DOCTYPE>
+<!DOCTYPE html>
 <html lang="zh-Hant">
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>訃聞訃告 電子訃文 網上製作平台</title>
-    <meta name="description" content="提供佛教基督教等訃聞範本,線上編輯製作電子訃聞告別式追思會邀請函，透過Line, Facebook, Whatsapp 發送手機訃聞。可彈性加入生平介紹、相簿影片、地圖導航、賓客統計、祝福留言、及簡訊提醒等功能">
-    <meta name="keywords" content="訃聞,訃告,訃文,白帖,告別式邀請函,電子訃聞,雲端訃聞,手機訃聞">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>电子邀请函编辑页面</title>
+    <!-- 引入所需的 CSS 文件 -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- 顶部标题栏 -->
+    <header>
+        <h1>电子邀请函编辑页面</h1>
+    </header>
 
-    <!-- Open Graph Meta Tags -->
-    <meta property="og:title" content="電子訃告 電子訃聞 雲端製作平台">
-    <meta property="og:description" content="提供佛教基督教等訃聞範本,網上編輯製作電子訃聞告別式追思會邀請函，透過Line, Facebook, Whatsapp 發送手機訃聞。可彈性加入生平介紹、相簿影片、地圖導航、賓客統計、祝福留言、及簡訊提醒等功能">
-    <meta property="og:site_name" content="live in our hearts">
-    <meta property="og:logo.png" content="logo.png">
-    <meta property="og:url" content="https://shiangan.github.io/metter/">
-    <meta property="og:type" content="website">
- 
+    <!-- 内容区域 -->
+    <main>
+        <h2>编辑电子邀请函</h2>
+        <!-- 这里放置编辑电子邀请函的具体内容，可以是表单、文本框等 -->
 
-    <body>
-    <div data-role="page" id="invitation_page">
-        <div data-role="header" data-position="fixed">
-            <h1>訃聞訃告 電子訃文</h1>
+        <div class="invitation-form">
+            <!-- 表单元素 -->
+            <label for="invite_title">邀请函标题：</label>
+            <input type="text" id="invite_title" name="invite_title">
+
+            <label for="invite_message">邀请函内容：</label>
+            <textarea id="invite_message" name="invite_message"></textarea>
+
+            <!-- 其他编辑元素 -->
+            <!-- 这里可以根据需要添加更多的编辑元素 -->
         </div>
-        <div data-role="content">
-            <p>這是一個電子訃文示例頁面。你可以在這裡添加更多內容和設計。</p>
-        </div>
-        <div data-role="footer" data-position="fixed">
-            <h4>2024</h4>
-        </div>
-    </div>
+    </main>
+
+    <!-- 底部信息栏 -->
+    <footer>
+        <p>&copy; 2024 祥安生命禮儀公司</p>
+    </footer>
+
+    <!-- 引入所需的 JavaScript 文件 -->
+    <script src="scripts.js"></script>
 </body>
 </html>
