@@ -92,28 +92,92 @@
         
             var myOptions = {
                 zoom: parseInt($('#invite_detail_zoom22736306').val()),
-                center: new google.maps.LatLng(map22736306_latcenter, map22736306_lngcenter),
-                mapTypeId: google.maps.MapTypeId.ROADMAP
+                center: new google.maps.LatLng($('#invite_detail_latcenter22736306').val(), $('#invite_detail_lngcenter22736306').val()),
+                mapTypeId: google.maps.MapTypeId.ROADMAP,
+                mapTypeControl: false,
+                streetViewControl: false,
+                draggable: true,
+                clickableIcons: false,
+                mapTypeControlOptions: {
+                    position: google.maps.ControlPosition.BOTTOM_RIGHT
+                }
             };
-        
-            map22736306 = new google.maps.Map(document.getElementById("invite_detail_map22736306"), myOptions);
-        
-            marker22736306 = new google.maps.Marker({
-                position: new google.maps.LatLng(map22736306_latmarker, map22736306_lngmarker),
-                map: map22736306,
-                draggable: true
+
+            map22736306 = new google.maps.Map(document.getElementById("map_canvas22736306"), myOptions);
+
+            google.maps.event.addListener(map22736306, 'center_changed', function() {
+                //$('#iframepage').get(0).contentWindow.setMapCenter22736306(map22736306.getCenter().lat(),map22736306.getCenter().lng());
             });
-        
+
+            google.maps.event.addListener(map22736306, 'zoom_changed', function(event) {
+                //$('#iframepage').get(0).contentWindow.setMapZoom22736306(map22736306.getZoom());
+            });
+
+            var image = new google.maps.MarkerImage('//cdn.youvivid.com/images/mobile_invite/map_marker.png',
+                new google.maps.Size(34, 34),
+                new google.maps.Point(0, 0),
+                new google.maps.Point(17, 17));
+
+            var myLatLng = new google.maps.LatLng($('#invite_detail_latmarker22736306').val(), $('#invite_detail_lngmarker22736306').val());
+            marker22736306 = new google.maps.Marker({
+                position: myLatLng,
+                map: map22736306,
+                draggable: true,
+                title: "以滑動與縮放地圖。",
+                icon: image
+            });
+
             google.maps.event.addListener(marker22736306, 'dragend', function(event) {
-                $('#invite_detail_lat22736306').val(event.latLng.lat());
-                $('#invite_detail_lng22736306').val(event.latLng.lng());
+                var location = marker22736306.getPosition();
+                $('#invite_detail_latmarker22736306').val(location.lat());
+                $('#invite_detail_lngmarker22736306').val(location.lng());
+                //$('#iframepage').get(0).contentWindow.setMarkerLocation22736306(location.lat(),location.lng());
             });
         }
 
-        google.maps.event.addDomListener(window, 'load', initialize22736306);
+        $(document).ready(function() {
+            initialize22736306();
+        });
+
+        var bReadyUrl81288 = 0;
+
+                function initialize() {
+            initialize22736306();
+        }
+
+        $(document).on("pageinit", "#invitation_page", function() {
+            if (!bReadyUrl81288) {
+                initialize();
+                bReadyUrl81288 = 1;
+            }
+        });
+
+        $(document).on("pageshow", "#invitation_page", function() {
+            if (!bReadyUrl81288) {
+                initialize();
+                bReadyUrl81288 = 1;
+            }
+        });
     </script>
 </head>
 <body>
-    <!-- Your HTML body content here -->
+    <!-- Page content goes here -->
+    <div data-role="page" id="invitation_page">
+        <div data-role="header" data-position="fixed">
+            <h1>訃聞訃告 電子訃文</h1>
+        </div>
+        <div data-role="content">
+            <!-- Content for the invitation goes here -->
+            <div id="map_canvas22736306" style="height:300px;"></div>
+            <div data-role="fieldcontain">
+                <label for="invite_detail_bplace22736306">定位地址:</label>
+                <input type="text" id="invite_detail_bplace22736306">
+                <input type="hidden" id="invite_detail_placeid22736306">
+            </div>
+        </div>
+        <div data-role="footer" data-position="fixed">
+            <h4>Footer text</h4>
+        </div>
+    </div>
 </body>
 </html>
