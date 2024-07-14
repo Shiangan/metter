@@ -1,28 +1,111 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html lang="zh-Hant">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>溫暖與互動示例</title>
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="utf-8">
+  <title>訃聞登記 - 祥安生命禮儀公司</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    body {
+      font-family: 'Arial, sans-serif';
+      background-color: #f4f4f9;
+      margin: 0;
+      padding: 0;
+    }
+
+    header {
+      background-color: #4a4a4a;
+      color: white;
+      padding: 1rem 0;
+      text-align: center;
+    }
+
+    section {
+      max-width: 600px;
+      margin: 2rem auto;
+      padding: 2rem;
+      background-color: white;
+      border-radius: 8px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+
+    label {
+      display: block;
+      margin-bottom: 0.5rem;
+      color: #333;
+    }
+
+    input, textarea, button {
+      width: 100%;
+      padding: 0.8rem;
+      margin-bottom: 1rem;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      box-sizing: border-box;
+    }
+
+    button {
+      background-color: #4a90e2;
+      color: white;
+      border: none;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    button:hover {
+      background-color: #357ab8;
+    }
+
+    footer {
+      text-align: center;
+      padding: 1rem 0;
+      color: #777;
+    }
+  </style>
 </head>
 <body>
-    <header>
-        <h1>溫暖的追思頁面</h1>
-    </header>
-    <main>
-        <section class="hero">
-            <h2>親愛的朋友與家人</h2>
-            <p>在這裡分享您對逝者的回憶與祝福，讓我們一同懷念與紀念。</p>
-            <a href="#" class="btn">分享祝福</a>
-        </section>
-        <section class="content">
-            <h2>生平簡介</h2>
-            <p>這裡可以填寫逝者的生平故事，讓更多人了解他（她）的一生。</p>
-        </section>
-    </main>
-    <footer>
-        <p>&copy; 2024 祥安生命禮儀公司. All rights reserved.</p>
-    </footer>
+  <header>
+    <h1>訃聞登記</h1>
+  </header>
+
+  <section>
+    <form action="generate_obituary.php" method="post" enctype="multipart/form-data">
+      <label for="name">故人姓名:</label>
+      <input type="text" id="name" name="name" required>
+      
+      <label for="birthdate">出生日期:</label>
+      <input type="date" id="birthdate" name="birthdate" required>
+      
+      <label for="deathdate">逝世日期:</label>
+      <input type="date" id="deathdate" name="deathdate" required>
+      
+      <label for="age">享年:</label>
+      <input type="number" id="age" name="age" required>
+      
+      <label for="message">訃聞內容:</label>
+      <textarea id="message" name="message" rows="4" required></textarea>
+      
+      <label for="ceremony_date">告別式日期:</label>
+      <input type="date" id="ceremony_date" name="ceremony_date" required>
+      
+      <label for="ceremony_time">告別式時間:</label>
+      <input type="time" id="ceremony_time" name="ceremony_time" required>
+      
+      <label for="ceremony_location">告別式地點:</label>
+      <input type="text" id="ceremony_location" name="ceremony_location" required>
+      
+      <label for="photos">上傳照片:</label>
+      <input type="file" id="photos" name="photos[]" accept="image/*" multiple required>
+      
+      <label for="music">背景音樂:</label>
+      <input type="file" id="music" name="music" accept="audio/*" required>
+      
+      <button type="submit">提交</button>
+    </form>
+  </section>
+
+  <footer>
+    <p>© 2024 祥安生命禮儀公司 | 地址: 台北市某某路123號 | 聯絡電話: 0938-179-858</p>
+  </footer>
 </body>
 </html>
