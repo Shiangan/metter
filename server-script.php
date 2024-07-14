@@ -1,4 +1,9 @@
 <?php
+// 启用错误报告
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
+
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // 调试输出，查看接收到的数据
     var_dump($_POST);
