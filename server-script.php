@@ -9,11 +9,27 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $ceremony_date = $_POST['ceremony_date'];
     $ceremony_time = $_POST['ceremony_time'];
     $ceremony_location = $_POST['ceremony_location'];
-
+    
     // 处理上传的照片和音乐文件
-    // 请根据需要自行处理文件上传，并保存到服务器指定的目录
+    $photos = $_FILES['photos'];
+    $music = $_FILES['music'];
 
-    // 生成 obituary 页面内容
+    // 保存到服务器的路径
+    $photosPath = 'path/to/your/photo-directory/';
+    $musicPath = 'path/to/your/music-directory/';
+
+    // 保存文件
+    foreach ($photos['tmp_name'] as $key => $tmp_name) {
+        $photoName = $photos['name'][$key];
+        move_uploaded_file($tmp_name, $photosPath . $photoName);
+    }
+    
+    if (!empty($music['name'])) {
+        $musicName = $music['name'];
+        move_uploaded_file($music['tmp_name'], $musicPath . $musicName);
+    }
+
+    // 生成 obituary 页面的内容
     $obituaryContent = "
         <!DOCTYPE html>
         <html lang=\"zh-Hant\">
@@ -68,19 +84,22 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 <p>時間: {$ceremony_time}</p>
                 <p>地點: {$ceremony_location}</p>
                 <!-- 照片部分 -->
-                <!-- 这里可以根据需要插入照片 -->
+                <!-- 根据需要插入照片 -->
             </div>
         </body>
         </html>
     ";
 
     // 写入生成的 obituary.html 文件
-    $obituaryFile = fopen("obituary.html", "w") or die("无法打开文件！");
+    $obituaryFile = fopen("Obituary.html", "w") or die("無法打開檔案！");
     fwrite($obituaryFile, $obituaryContent);
     fclose($obituaryFile);
 
-    // 成功后重定向到 obituary.html 页面
-    header("Location: obituary.html");
-    exit();
+    // 成功后返回数据
+    echo "Success";
+} else {
+    // 如果不是 POST 请求，返回错误信息
+    http_response_code(405);
+    echo "Method Not Allowed";
 }
 ?>
