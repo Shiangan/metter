@@ -85,9 +85,41 @@
         <label for="music">音樂:</label>
         <input type="file" id="music" name="music"><br><br>
 
+        <!-- 提交按钮 -->
         <button type="button" onclick="submitForm()">提交</button>
     </form>
 
-    <script src="script.js"></script>
+    <!-- 音樂播放器 -->
+    <audio autoplay loop>
+        <source src="path/to/your/music-file.mp3" type="audio/mpeg">
+        您的瀏覽器不支援音樂播放。
+    </audio>
+
+    <script>
+        // JavaScript 提交表單函数
+        function submitForm() {
+            var form = document.getElementById('submissionForm');
+            var formData = new FormData(form);
+
+            fetch('path/to/your/server-script.php', {
+                method: 'POST',
+                body: formData
+            })
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Network response was not ok');
+                }
+                return response.text();
+            })
+            .then(data => {
+                console.log(data);
+                alert('表單提交成功！');
+            })
+            .catch(error => {
+                console.error('發生錯誤:', error);
+                alert('表單提交失敗。請稍後再試。');
+            });
+        }
+    </script>
 </body>
 </html>
