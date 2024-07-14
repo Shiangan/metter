@@ -1,111 +1,58 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="zh-Hant">
 <head>
-  <meta charset="utf-8">
-  <title>訃聞登記 - 祥安生命禮儀公司</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="styles.css">
-  <style>
-    body {
-      font-family: 'Arial, sans-serif';
-      background-color: #f4f4f9;
-      margin: 0;
-      padding: 0;
-    }
-
-    header {
-      background-color: #4a4a4a;
-      color: white;
-      padding: 1rem 0;
-      text-align: center;
-    }
-
-    section {
-      max-width: 600px;
-      margin: 2rem auto;
-      padding: 2rem;
-      background-color: white;
-      border-radius: 8px;
-      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-    }
-
-    label {
-      display: block;
-      margin-bottom: 0.5rem;
-      color: #333;
-    }
-
-    input, textarea, button {
-      width: 100%;
-      padding: 0.8rem;
-      margin-bottom: 1rem;
-      border: 1px solid #ccc;
-      border-radius: 4px;
-      box-sizing: border-box;
-    }
-
-    button {
-      background-color: #4a90e2;
-      color: white;
-      border: none;
-      cursor: pointer;
-      transition: background-color 0.3s;
-    }
-
-    button:hover {
-      background-color: #357ab8;
-    }
-
-    footer {
-      text-align: center;
-      padding: 1rem 0;
-      color: #777;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>訃聞提交</title>
+    <style>
+        /* 可選：隱藏音樂播放器界面 */
+        audio {
+            display: none;
+        }
+    </style>
 </head>
 <body>
-  <header>
-    <h1>訃聞登記</h1>
-  </header>
+    <h1>訃聞提交表單</h1>
 
-  <section>
-    <form action="generate_obituary.php" method="post" enctype="multipart/form-data">
-      <label for="name">故人姓名:</label>
-      <input type="text" id="name" name="name" required>
-      
-      <label for="birthdate">出生日期:</label>
-      <input type="date" id="birthdate" name="birthdate" required>
-      
-      <label for="deathdate">逝世日期:</label>
-      <input type="date" id="deathdate" name="deathdate" required>
-      
-      <label for="age">享年:</label>
-      <input type="number" id="age" name="age" required>
-      
-      <label for="message">訃聞內容:</label>
-      <textarea id="message" name="message" rows="4" required></textarea>
-      
-      <label for="ceremony_date">告別式日期:</label>
-      <input type="date" id="ceremony_date" name="ceremony_date" required>
-      
-      <label for="ceremony_time">告別式時間:</label>
-      <input type="time" id="ceremony_time" name="ceremony_time" required>
-      
-      <label for="ceremony_location">告別式地點:</label>
-      <input type="text" id="ceremony_location" name="ceremony_location" required>
-      
-      <label for="photos">上傳照片:</label>
-      <input type="file" id="photos" name="photos[]" accept="image/*" multiple required>
-      
-      <label for="music">背景音樂:</label>
-      <input type="file" id="music" name="music" accept="audio/*" required>
-      
-      <button type="submit">提交</button>
+    <!-- 音樂播放器 -->
+    <audio autoplay loop>
+        <source src="path/to/your/music-file.mp3" type="audio/mpeg">
+        您的瀏覽器不支援音樂播放。
+    </audio>
+
+    <form action="https://formspree.io/f/yourFormID" method="POST" enctype="multipart/form-data">
+        <!-- 表單字段 -->
+        <label for="name">姓名:</label>
+        <input type="text" id="name" name="name" required><br><br>
+
+        <label for="birthdate">出生日期:</label>
+        <input type="date" id="birthdate" name="birthdate" required><br><br>
+
+        <label for="deathdate">死亡日期:</label>
+        <input type="date" id="deathdate" name="deathdate" required><br><br>
+
+        <label for="age">享年:</label>
+        <input type="number" id="age" name="age" required><br><br>
+
+        <label for="message">信息:</label>
+        <textarea id="message" name="message" required></textarea><br><br>
+
+        <label for="ceremony_date">儀式日期:</label>
+        <input type="date" id="ceremony_date" name="ceremony_date" required><br><br>
+
+        <label for="ceremony_time">儀式時間:</label>
+        <input type="time" id="ceremony_time" name="ceremony_time" required><br><br>
+
+        <label for="ceremony_location">儀式地點:</label>
+        <input type="text" id="ceremony_location" name="ceremony_location" required><br><br>
+
+        <label for="photos">照片:</label>
+        <input type="file" id="photos" name="photos[]" multiple><br><br>
+
+        <label for="music">音樂:</label>
+        <input type="file" id="music" name="music"><br><br>
+
+        <button type="submit">提交</button>
     </form>
-  </section>
-
-  <footer>
-    <p>© 2024 祥安生命禮儀公司 | 地址: 台北市某某路123號 | 聯絡電話: 0938-179-858</p>
-  </footer>
 </body>
 </html>
