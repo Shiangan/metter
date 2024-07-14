@@ -53,13 +53,7 @@
 <body>
     <h1>訃聞提交表單</h1>
 
-    <!-- 音樂播放器 -->
-    <audio autoplay loop>
-        <source src="path/to/your/music-file.mp3" type="audio/mpeg">
-        您的瀏覽器不支援音樂播放。
-    </audio>
-
-    <script src="script.js"></script>">
+    <form id="submissionForm">
         <!-- 表單字段 -->
         <label for="name">姓名:</label>
         <input type="text" id="name" name="name" required><br><br>
@@ -91,9 +85,9 @@
         <label for="music">音樂:</label>
         <input type="file" id="music" name="music"><br><br>
 
-        <button type="submit">提交</button>
-
-       <script src="script.js"></script>
+        <button type="button" onclick="submitForm()">提交</button>
     </form>
+
+    <script src="script.js"></script>
 </body>
 </html>
