@@ -1,5 +1,9 @@
 <?php
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    // 调试输出，查看接收到的数据
+    var_dump($_POST);
+    var_dump($_FILES);
+
     // 表单提交的数据
     $name = $_POST['name'];
     $birthdate = $_POST['birthdate'];
@@ -17,6 +21,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // 保存到服务器的路径
     $photosPath = 'path/to/your/photo-directory/';
     $musicPath = 'path/to/your/music-directory/';
+
+    // 检查路径是否存在，不存在则创建
+    if (!is_dir($photosPath)) {
+        mkdir($photosPath, 0777, true);
+    }
+    if (!is_dir($musicPath)) {
+        mkdir($musicPath, 0777, true);
+    }
 
     // 保存文件
     foreach ($photos['tmp_name'] as $key => $tmp_name) {
