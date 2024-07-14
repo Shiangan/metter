@@ -44,80 +44,32 @@
         button:hover {
             background-color: #357ABD;
         }
-        /* 隱藏音樂播放器界面 */
-        audio {
-            display: none;
-        }
     </style>
 </head>
 <body>
     <h1>訃聞提交表單</h1>
-
-    <form id="submissionForm">
-        <!-- 表單字段 -->
+    <form id="submissionForm" method="POST" action="server-script.php" enctype="multipart/form-data">
         <label for="name">姓名:</label>
-        <input type="text" id="name" name="name" required><br><br>
-
+        <input type="text" id="name" name="name" required>
         <label for="birthdate">出生日期:</label>
-        <input type="date" id="birthdate" name="birthdate" required><br><br>
-
+        <input type="date" id="birthdate" name="birthdate" required>
         <label for="deathdate">死亡日期:</label>
-        <input type="date" id="deathdate" name="deathdate" required><br><br>
-
+        <input type="date" id="deathdate" name="deathdate" required>
         <label for="age">享年:</label>
-        <input type="number" id="age" name="age" required><br><br>
-
+        <input type="number" id="age" name="age" required>
         <label for="message">信息:</label>
-        <textarea id="message" name="message" required></textarea><br><br>
-
+        <textarea id="message" name="message" required></textarea>
         <label for="ceremony_date">儀式日期:</label>
-        <input type="date" id="ceremony_date" name="ceremony_date" required><br><br>
-
+        <input type="date" id="ceremony_date" name="ceremony_date" required>
         <label for="ceremony_time">儀式時間:</label>
-        <input type="time" id="ceremony_time" name="ceremony_time" required><br><br>
-
+        <input type="time" id="ceremony_time" name="ceremony_time" required>
         <label for="ceremony_location">儀式地點:</label>
-        <input type="text" id="ceremony_location" name="ceremony_location" required><br><br>
-
+        <input type="text" id="ceremony_location" name="ceremony_location" required>
         <label for="photos">照片:</label>
-        <input type="file" id="photos" name="photos[]" multiple><br><br>
-
+        <input type="file" id="photos" name="photos[]" multiple>
         <label for="music">音樂:</label>
-        <input type="file" id="music" name="music"><br><br>
-
-        <button type="button" onclick="submitForm()">提交</button>
+        <input type="file" id="music" name="music">
+        <button type="submit">提交</button>
     </form>
-
-    <!-- 音樂播放器 -->
-    <audio autoplay loop>
-        <source src="path/to/your/music-file.mp3" type="audio/mpeg">
-        您的瀏覽器不支援音樂播放。
-    </audio>
-
-    <script>
-        function submitForm() {
-            var form = document.getElementById('submissionForm');
-            var formData = new FormData(form);
-
-            fetch('server-script.php', {
-                method: 'POST',
-                body: formData
-            })
-            .then(response => {
-                if (!response.ok) {
-                    throw new Error('Network response was not ok');
-                }
-                return response.text();
-            })
-            .then(data => {
-                console.log(data);
-                alert('表單提交成功！');
-            })
-            .catch(error => {
-                console.error('發生錯誤:', error);
-                alert('表單提交失敗。請稍後再試。');
-            });
-        }
-    </script>
 </body>
 </html>
