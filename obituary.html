@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>訃聞詳細信息</title>
+    <style>
+        body {
+            font-family: 'Noto Sans TC', sans-serif;
+            background: linear-gradient(to bottom, #f0f4f8, #d9e2ec);
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: #4a90e2;
+            color: #fff;
+            text-align: center;
+            padding: 1rem 0;
+        }
+        .container {
+            max-width: 800px;
+            margin: 2rem auto;
+            padding: 1rem;
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        h1, h2 {
+            text-align: center;
+        }
+        .photos {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin: 1rem 0;
+        }
+        .photos img {
+            max-width: 100%;
+            margin: 0.5rem;
+            border-radius: 8px;
+        }
+        audio {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>訃聞詳細信息</h1>
+    </header>
+    <div class="container">
+        <h2>姓名: 張三</h2>
+        <p>出生日期: 1940-01-01</p>
+        <p>死亡日期: 2024-07-01</p>
+        <p>享年: 84</p>
+        <p>信息: 張三於2024年7月1日平靜地辭世，享年84歲。儀式將於2024年7月14日在台北市某某殯儀館舉行。</p>
+        <h3>儀式信息</h3>
+        <p>日期: 2024-07-14</p>
+        <p>時間: 10:00 AM</p>
+        <p>地點: 台北市某某殯儀館</p>
+        <div class="photos">
+            <img src="path/to/photo1.jpg" alt="照片1">
+            <img src="path/to/photo2.jpg" alt="照片2">
+        </div>
+    </div>
+    <!-- 音樂播放器 -->
+    <audio autoplay loop>
+        <source src="path/to/your/music-file.mp3" type="audio/mpeg">
+        您的瀏覽器不支援音樂播放。
+    </audio>
+</body>
+</html>
