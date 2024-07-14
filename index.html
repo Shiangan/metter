@@ -5,7 +5,46 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>訃聞提交</title>
     <style>
-        /* 可選：隱藏音樂播放器界面 */
+        body {
+            font-family: 'Noto Sans TC', sans-serif;
+            background: linear-gradient(to bottom, #f0f4f8, #d9e2ec);
+            color: #333;
+            margin: 0;
+            padding: 2rem;
+        }
+        h1 {
+            text-align: center;
+        }
+        form {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 2rem;
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: bold;
+        }
+        input, textarea, button {
+            width: 100%;
+            padding: 0.5rem;
+            margin-bottom: 1rem;
+            border-radius: 4px;
+            border: 1px solid #ccc;
+        }
+        button {
+            background-color: #4a90e2;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #357ABD;
+        }
+        /* 隱藏音樂播放器界面 */
         audio {
             display: none;
         }
@@ -20,7 +59,7 @@
         您的瀏覽器不支援音樂播放。
     </audio>
 
-    <form action="https://formspree.io/f/yourFormID" method="POST" enctype="multipart/form-data">
+    <form action="path/to/your/server-script.php" method="POST" enctype="multipart/form-data">
         <!-- 表單字段 -->
         <label for="name">姓名:</label>
         <input type="text" id="name" name="name" required><br><br>
